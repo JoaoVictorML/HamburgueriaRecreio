@@ -1,0 +1,42 @@
+<aside class="aside">
+            <h2 class="carrinho-titulo">Seu Pedido 🛒</h2>
+            <div id="carrinhoVazio" class="carrinho-vazio">
+                Seu carrinho está vazio.<br>Escolha suas opções no cardápio!
+            </div>
+            
+            <div id="itensCarrinho" class="itens-carrinho"></div>
+
+            <div id="resumoCarrinho" style="display: none;">
+                <div class="divisor"></div>
+                
+                <div class="form-grupo">
+                    <label for="nomeCliente">Seu Nome:</label>
+                    <input type="text" id="nomeCliente" class="input-form" placeholder="Ex: João Silva">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="enderecoCliente">Endereço de Entrega:</label>
+                    <input type="text" id="enderecoCliente" class="input-form" placeholder="Rua, número e bairro">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="pagamentoCliente">Forma de Pagamento:</label>
+                    <select id="pagamentoCliente" class="input-form">
+                        <option value="Pix">Pix</option>
+                        <option value="Cartão de Crédito/Débito">Cartão de Crédito/Débito</option>
+                        <option value="Dinheiro">Dinheiro</option>
+                    </select>
+                </div>
+
+                <div class="divisor"></div>
+                <div class="total-container">
+                    <span>Total:</span>
+                    <span id="valorTotal" class="valor-total">R$ 0,00</span>
+                </div>
+
+                <button id="btnEnviarWhatsapp" class="btn-whatsapp">
+                    Finalizar via WhatsApp 💬
+                </button>
+            </div>
+        </aside>
+    </div>

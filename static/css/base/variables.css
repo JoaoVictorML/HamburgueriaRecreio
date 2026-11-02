@@ -1,0 +1,19 @@
+:root {
+    --cor-primaria: #121212;
+    --cor-primaria-escura: #0a0a0a;
+    --cor-destaque: #f1b811;
+    --cor-destaque-hover: #d9a309;
+    --cor-whatsapp: #25d366;
+    --cor-whatsapp-hover: #20ba5a;
+    --cor-fundo: #0a0a0a;
+    --cor-superficie: #161616;
+    --cor-superficie-card: #222222;
+    --cor-texto: #ffffff;
+    --cor-texto-mutado: #aaaaaa;
+    --cor-borda: #2a2a2a;
+
+    --raio: 12px;
+    --sombra: 0 4px 20px rgba(0, 0, 0, 0.6);
+    --espaco: clamp(12px, 2vw, 20px);
+    --largura-max: 1200px;
+}

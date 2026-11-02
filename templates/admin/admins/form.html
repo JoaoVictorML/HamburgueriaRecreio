@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="admin-form">
+  <h1>{{ "Editar admin" if editing else "Novo admin" }}</h1>
+
+  {% if error %}<p class="alert alert-error">{{ error }}</p>{% endif %}
+
+  <form method="POST">
+    <label>Nome
+      <input type="text" name="nome" value="{{ admin.nome or '' }}" required>
+    </label>
+
+    <label>E-mail
+      <input type="email" name="email" value="{{ admin.email or '' }}" required>
+    </label>
+
+    <label>Senha {% if editing %}(deixe em branco para manter){% endif %}
+      <input type="password" name="password" minlength="6" {{ "" if editing else "required" }}>
+    </label>
+
+    <label>Cargo
+      <input type="text" name="cargo" value="{{ admin.cargo or 'Administrador' }}">
+    </label>
+
+    <label>Salário (R$)
+      <input type="number" name="salario" step="0.01" min="0" value="{{ admin.salario or 0 }}">
+    </label>
+
+    <label>Telefone
+      <input type="tel" name="telefone" value="{{ admin.telefone or '' }}">
+    </label>
+
+    <label>
+      <input type="checkbox" name="ativo" {{ "checked" if admin.ativo else "" }}> Ativo
+    </label>
+
+    <button type="submit">Salvar</button>
+    <a href="{{ url_for('admin_bp.list_admins') }}">Cancelar</a>
+  </form>
+</section>
+{% endblock %}

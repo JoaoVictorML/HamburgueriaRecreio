@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Funcionários - Hamburgueria Recreio{% endblock %}
+
+{% block content %}
+    <h1>Lista de Funcionários</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.fullname }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.phone }}</td>
+                <td>
+                    <a href="{{ url_for('views_bp.edit_employee', id=employee.id) }}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{{ url_for('views_bp.delete_employee', id=employee.id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir este funcionário?')">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,8 @@
+.footer-container {
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-texto-mutado);
+    padding: calc(var(--espaco) * 1.5) var(--espaco);
+    text-align: center;
+    border-top: 1px solid var(--cor-borda);
+    margin-top: auto;
+}

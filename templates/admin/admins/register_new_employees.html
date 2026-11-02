@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="admin-form">
+  <h1>Registrar Novo Funcionário</h1>
+
+  {% if error %}<p class="alert alert-error">{{ error }}</p>{% endif %}
+
+  <form method="POST">
+    <label>Nome
+      <input type="text" name="nome" value="{{ employee.nome or '' }}" required>
+    </label>
+
+    <label>E-mail
+      <input type="email" name="email" value="{{ employee.email or '' }}" required>
+    </label>
+
+    <label>Senha
+      <input type="password" name="password" minlength="6" required>
+    </label>
+
+    <label>Cargo
+      <input type="text" name="cargo" value="{{ employee.cargo or 'Funcionário' }}">
+    </label>
+
+    <label>Salário (R$)
+      <input type="number" name="salario" step="0.01" min="0" value="{{ employee.salario or 0 }}">
+    </label>
+
+    <label>Telefone
+      <input type="tel" name="telefone" value="{{ employee.telefone or '' }}">
+    </label>
+
+    <button type="submit">Salvar</button>
+    <a href="{{ url_for('admin_bp.list_employees') }}">Cancelar</a>
+  </form>
+</section>
+{% endblock %}

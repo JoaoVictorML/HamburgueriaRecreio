@@ -1,0 +1,12 @@
+<div class="header">
+            <a href="{{ url_for('views_bp.index') }}" class="marca">
+                <span>🍔</span> Hamburgueria Recreio
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir Menu">☰</button>
+            <nav class="nav-bar" id="navBar">
+                <a href="{{ url_for('views_bp.index') }}" class="ativo">Cardápio</a>
+                <a href="{{ url_for('views_bp.about') }}">Sobre Nós</a>
+                <a href="{{ url_for('views_bp.contact') }}">Contato</a>
+                <a href="{{ url_for('views_bp.auth_selection') }}">Login</a>
+            </nav>
+        </div>

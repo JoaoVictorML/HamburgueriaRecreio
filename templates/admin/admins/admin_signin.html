@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="admin-form">
+  <h1>Entrar como Administrador</h1>
+
+  {% if error %}<p class="alert alert-error">{{ error }}</p>{% endif %}
+
+  <form method="POST">
+    <label>E-mail
+      <input type="email" name="email" required>
+    </label>
+
+    <label>Senha
+      <input type="password" name="password" required>
+    </label>
+
+    <button type="submit">Entrar</button>
+  </form>
+</section>
+{% endblock %}
