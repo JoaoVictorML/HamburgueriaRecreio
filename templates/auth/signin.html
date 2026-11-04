@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center" style="min-height: 60vh">
+  <div class="col-md-5">
+    <div class="card p-4 shadow-sm border bg-custom-card"
+      style="border-color: var(--secondary) !important; border-radius: 15px">
+      <div class="text-center mb-4">
+        <h3 class="fw-bold">Bem-vindo de volta!</h3>
+        <p class="text-muted small">
+          Insira seus dados para acessar o painel da Hamburgueria Recreio
+        </p>
+      </div>
+
+      <div id="loginError" class="alert alert-danger d-none small py-2 text-start" role="alert"></div>
+
+      <form id="formLogin" method="POST" action="/signin">
+        <div class="mb-3 text-start">
+          <label for="email" class="form-label fw-medium">E-mail</label>
+          <input type="email" class="form-control" id="email" name="email" required placeholder="exemplo@email.com" />
+        </div>
+
+        <div class="mb-3 text-start">
+          <label for="password" class="form-label fw-medium">Senha</label>
+          <input type="password" class="form-control" id="password" name="password" required placeholder="Sua senha" />
+        </div>
+
+        <button type="submit" class="btn btn-custom-primary w-100 rounded-pill fw-bold mb-3">
+          Entrar
+        </button>
+      </form>
+
+      <div class="text-center mt-2">
+        <p class="small text-muted mb-0">
+          Ainda não tem conta?
+          <a href="{{ url_for('views_bp.signup') }}" class="fw-bold text-decoration-none"
+            style="color: var(--primary)">
+            Cadastre-se
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,136 @@
+/* Hero */
+.hero-banner {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), #1f1405;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.hero-content h1 {
+    margin: 0 0 8px 0;
+    color: var(--cor-destaque);
+    font-size: clamp(1.8rem, 2vw + 1rem, 2.5rem);
+}
+
+.hero-content p {
+    margin: 4px 0;
+    color: var(--cor-texto);
+}
+
+.hero-content small {
+    color: var(--cor-texto-mutado);
+}
+
+/* Categorias */
+.categorias {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+/* Vitrine */
+.main {
+    flex: 1;
+    min-width: 0;
+}
+
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* Carrinho */
+.aside {
+    flex: 0 0 320px;
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: var(--espaco);
+    align-self: flex-start;
+    position: sticky;
+    top: 90px;
+}
+
+.carrinho-titulo {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 10px;
+}
+
+.carrinho-vazio {
+    color: var(--cor-texto-mutado);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.itens-carrinho {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 280px;
+    overflow-y: auto;
+    margin-bottom: 16px;
+}
+
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--cor-superficie-card);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-nome {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.item-preco {
+    color: var(--cor-destaque);
+    font-size: 0.85rem;
+}
+
+.item-controles {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.divisor {
+    height: 1px;
+    background-color: var(--cor-borda);
+    margin: 16px 0;
+}
+
+.total-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.valor-total {
+    color: var(--cor-destaque);
+}
+
+@media (max-width: 992px) {
+    .aside {
+        flex-basis: auto;
+        width: 100%;
+        position: static;
+    }
+}

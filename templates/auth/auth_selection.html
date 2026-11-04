@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Micro-Card | Crédito para o seu Negócio{% endblock %}
+
+{% block content %}
+<div class="welcome-page">
+    <div class="welcome-card">
+        <h2>Bem-vindo!</h2>
+        <p>Selecione seu tipo de acesso:</p>
+
+        <div class="welcome-actions">
+            <a href="{{ url_for('views_bp.signin', tipo='user') }}" 
+               class="btn-acesso btn-acesso--user">
+                Usuário
+            </a>
+            <a href="{{ url_for('views_bp.signin', tipo='admin') }}" 
+               class="btn-acesso btn-acesso--admin">
+                Administrador
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="admin-list">
+  <h1>Administradores</h1>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <p class="alert alert-{{ category }}">{{ message }}</p>
+    {% endfor %}
+  {% endwith %}
+
+  <a href="{{ url_for('admin_bp.create_admin') }}">+ Novo admin</a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Nome</th><th>E-mail</th><th>Cargo</th>
+        <th>Salário</th><th>Telefone</th><th>Status</th><th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in admins %}
+      <tr>
+        <td>{{ a.id }}</td>
+        <td>{{ a.nome }}</td>
+        <td>{{ a.email }}</td>
+        <td>{{ a.cargo }}</td>
+        <td>R$ {{ "%.2f"|format(a.salario) }}</td>
+        <td>{{ a.telefone or "-" }}</td>
+        <td>{{ "Ativo" if a.ativo else "Inativo" }}</td>
+        <td>
+          <a href="{{ url_for('admin_bp.edit_admin', admin_id=a.id) }}">Editar</a>
+          <form method="POST"
+                action="{{ url_for('admin_bp.delete_admin', admin_id=a.id) }}"
+                style="display:inline"
+                onsubmit="return confirm('Excluir {{ a.nome }}?')">
+            <button type="submit">Excluir</button>
+          </form>
+        </td>
+      </tr>
+      {% else %}
+      <tr><td colspan="8">Nenhum admin cadastrado.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

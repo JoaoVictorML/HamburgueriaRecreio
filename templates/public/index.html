@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Banner Principal -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Os Melhores Burguers da Região</h1>
+            <p>Aberto de Terça a Domingo | Das 18h às 22h</p>
+            <small>📍 Em frente à Quadra de Recreio</small>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-container">
+        <!-- Vitrine de Produtos -->
+        <main class="main" id="cardapio">
+            <div class="categorias" id="categorias">
+                <button class="btn-categoria ativo" data-cat="todos">Todos</button>
+                <button class="btn-categoria" data-cat="especiais">Burguers Especiais</button>
+                <button class="btn-categoria" data-cat="tradicionais">Tradicionais</button>
+                <button class="btn-categoria" data-cat="combos">Combos</button>
+            </div>
+
+            <div class="grid-produtos" id="gridProdutos">
+                <!-- Produtos renderizados dinamicamente pelo JS -->
+            </div>
+        </main>
+    </div>
+    {% include "components/aside-bar.html" %}
+{% endblock %}

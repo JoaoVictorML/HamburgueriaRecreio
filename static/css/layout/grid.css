@@ -1,0 +1,22 @@
+.principal-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: calc(var(--espaco) * 1.5);
+    width: 100%;
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding: calc(var(--espaco) * 1.5) var(--espaco);
+}
+
+@media (max-width: 992px) {
+    .main-container {
+        flex-direction: column;
+    }
+}

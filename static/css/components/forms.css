@@ -1,0 +1,56 @@
+.form-grupo {
+    margin-bottom: 12px;
+}
+
+.form-grupo label {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--cor-texto-mutado);
+    margin-bottom: 4px;
+}
+
+.input-form {
+    width: 100%;
+    padding: 8px 12px;
+    background: var(--cor-superficie-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.input-form:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+}
+
+/* Formulários de autenticação */
+.bg-custom-card .form-label {
+    color: var(--cor-texto) !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    margin-bottom: 6px !important;
+}
+
+.bg-custom-card .form-control {
+    background-color: var(--cor-superficie-card) !important;
+    border: 1px solid var(--cor-borda) !important;
+    border-radius: 10px !important;
+    color: var(--cor-texto) !important;
+    padding: 12px 16px !important;
+    font-size: 0.95rem !important;
+    height: auto !important;
+    width: 100% !important;
+}
+
+.bg-custom-card .form-control::placeholder {
+    color: #777 !important;
+}
+
+.bg-custom-card .form-control:focus {
+    border-color: var(--cor-destaque) !important;
+    box-shadow: 0 0 0 3px rgba(241, 184, 17, 0.18) !important;
+    background-color: var(--cor-superficie-card) !important;
+    color: var(--cor-texto) !important;
+    outline: none;
+}
